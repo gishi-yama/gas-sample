@@ -8,14 +8,14 @@ function myFunction() {
 
 // メールを送る
 function sendMail() {
-  var mailto = PropertiesService.getScriptProperties().getProperty('to');
-  var mailfrom = PropertiesService.getScriptProperties().getProperty('from');
-  var mailcc = PropertiesService.getScriptProperties().getProperty('cc');
-  var name = PropertiesService.getScriptProperties().getProperty('name');
-  var subject = 'This is only a test.';
-  var date = new Date();
+  const mailto = PropertiesService.getScriptProperties().getProperty('to');
+  const mailfrom = PropertiesService.getScriptProperties().getProperty('from');
+  const mailcc = PropertiesService.getScriptProperties().getProperty('cc');
+  const name = PropertiesService.getScriptProperties().getProperty('name');
+  const subject = 'This is only a test.';
+  const date = new Date();
   date.toLocaleString("ja");
-  var body = 'このメールはテストメールです。送信日時：' + date.toString();
+  const body = 'このメールはテストメールです。送信日時：' + date.toString();
   try {
     GmailApp.sendEmail(mailto, subject, body, {
       cc: mailcc,
